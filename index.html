@@ -1,0 +1,298 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>360 image preview DEMO by gornostay25</title>
+
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.pnlm-container{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    width: 100%;
+    height: 400px;
+    font-family: Helvetica,nimbus sans l,liberation sans,Arial,sans-serif;
+    background: #f4f4f4 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NyIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCA2NyAxMDAiPgo8cGF0aCBzdHJva2U9IiNjY2MiIGZpbGw9Im5vbmUiIGQ9Ik0zMy41LDUwLDAsNjMsMzMuNSw3NSw2Nyw2MywzMy41LDUwbS0zMy41LTUwLDY3LDI1bS0wLjUsMCwwLDc1bS02Ni41LTc1LDY3LTI1bS0zMy41LDc1LDAsMjVtMC0xMDAsMCw1MCIvPgo8L3N2Zz4K) repeat;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    line-height: 1.4;
+    contain: content;
+}
+
+    </style>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+    <div class="modal text-dark" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content rounded-6 shadow">
+            <div class="modal-header border-bottom-0">
+              <h5 class="modal-title">Kontakt</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-0">
+              <p>Ovo je prototip. Ako potrebno vise detalja, zovite</p>
+            </div>
+            <div class="modal-footer flex-column border-top-0">
+              <a href="tel:38268461336" type="button" class="btn btn-lg btn-primary w-100 mx-0 mb-2">Call now</a>
+              <button type="button" class="btn btn-lg btn-light w-100 mx-0" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">360&deg; preview DEMO</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#">DEMO</a>
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
+    <div id="panorama" class="pnlm-container mt-md-3"></div>
+    <p class="lead mt-3">Ovo je prototip. Slika uzeta iz interneta. Ima mogućnost prelazka među prostorija uz pomoć dugma na slici takođe ima i markera sa dodatnom informacijom</p>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>360&deg; viewer, by <a href="tel:38268461336" class="text-white">@gornostay25</a>.</p>
+  </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "library",
+        "author": "Top Apartmane doo",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true
+    },
+    
+    "scenes": {
+        "library": {
+            "title": "George Peabody Library",
+            "hfov": 100,
+            "pitch": 10,
+            "yaw": 50,
+            "compass": true,
+            "northOffset": 289,
+            "type": "multires",
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/library",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 6,
+                "cubeResolution": 8432
+            },
+            "hotSpots": [
+                {
+                    "pitch": 60,
+                    "yaw": 60,
+                    "type": "info",
+                    "text": "Primjer markera sa informacijom"
+                },
+                {
+                    "pitch": 10,
+                    "yaw": 25,
+                    "type": "info",
+                    "text": "Primjer markera sa informacijom"
+                },
+                {
+                    "pitch": 0,
+                    "yaw": 8,
+                    "type": "info",
+                    "text": "Primjer markera sa informacijom"
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 115,
+                    "type": "info",
+                    "text": "Primjer markera sa informacijom koji je link na drugu stranicu",
+                    "URL": "https://example.com/"
+                },
+                {
+                    "pitch": -3,
+                    "yaw": 65,
+                    "type": "scene",
+                    "text": "Druga scena: Gallery",
+                    "sceneId": "gallery"
+                },
+                {
+                    "pitch": 47,
+                    "yaw": -135,
+                    "type": "scene",
+                    "text": "Druga scena: 6th Floor",
+                    "sceneId": "6th-floor"
+                }
+            ]
+        },
+
+        "gallery": {
+            "title": "Gallery",
+            "hfov": 100,
+            "yaw": -20,
+            "type": "multires",
+            "compass": true,
+            "northOffset": 240,
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/gallery",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 5,
+                "cubeResolution": 4384
+            },
+            "hotSpots": [
+                {
+                    "pitch": -7,
+                    "yaw": -58,
+                    "type": "scene",
+                    "text": "Druga scena: Library",
+                    "sceneId": "library",
+                    "targetYaw": 240
+                }
+            ]
+        },
+        
+        "6th-floor": {
+            "title": "6th Floor",
+            "hfov": 100,
+            "pitch": -20,
+            "yaw": -20,
+            "compass": true,
+            "northOffset": 0,
+            "type": "multires",
+            "multiRes": {
+                "basePath": "https:\/\/pannellum.org/images/multires/6th-floor",
+                "path": "/%l/%s%y_%x",
+                "fallbackPath": "/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 3968
+            },
+            "hotSpots": [
+                {
+                    "pitch": -47.5,
+                    "yaw": -11,
+                    "type": "scene",
+                    "text": "Druga scena: Main Floor",
+                    "sceneId": "library"
+                },
+                {
+                    "pitch": -28,
+                    "yaw": -3,
+                    "type": "scene",
+                    "text": "Druga scena: Gallery",
+                    "sceneId": "gallery"
+                },
+                {
+                    "pitch": -20,
+                    "yaw": -165.7,
+                    "type": "info",
+                    "text": "Primjer markera sa informacijom koji je link na drugu stranicu",
+                    "URL": "https://example.com"
+                }
+            ]
+        }
+    }
+});
+    </script>
+  </body>
+</html>
