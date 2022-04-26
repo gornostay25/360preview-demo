@@ -124,7 +124,9 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
 <script type="text/javascript">
   pannellum.viewer('container', {
     "sceneFadeDuration": 1000,
-    "hotSpotDebug": true,
+    // "hotSpotDebug": true,
+    "autoLoad": true,
+    "autoRotate": -2,
     default:{
       firstScene:"hodnik"
     },
@@ -183,7 +185,7 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
       },
       paluba:{
         type: "equirectangular",
-        panorama: "/out202.png",
+        panorama: "out202.png",
         hotSpots:[
           {
             "pitch": -36.94309571536611,
