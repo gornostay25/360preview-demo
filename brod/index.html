@@ -162,7 +162,7 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
             "pitch": 12.047348331025255,
             "yaw": -179.6840188538941,
             "type": "scene",
-            "text": "Djeca",
+            "text": "Children's playroom",
             "sceneId": "djeca"
           },
           //Pitch: 14.099219299552928, Yaw: 47.76991410845537, Center Pitch: -2.28336298146956, Center Yaw: 47.94907780166118, HFOV: 100
@@ -170,7 +170,7 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
             "pitch": 14.099219299552928,
             "yaw": 47.76991410845537,
             "type": "scene",
-            "text": "sobe",
+            "text": "Rooms",
             "sceneId": "sobe"
           },
           // Pitch: 43.06121704244455, Yaw: -81.2050436637039, Center Pitch: 20.110266210300992, Center Yaw: -89.11578835935069, HFOV: 100
@@ -178,8 +178,15 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
             "pitch": 43.06121704244455,
             "yaw": -81.2050436637039,
             "type": "scene",
-            "text": "Paluba",
+            "text": "Ship deck",
             "sceneId": "paluba"
+          },//Pitch: 43.53296070433715, Yaw: 78.61381707843654, Center Pitch: 18.96603743319471, Center Yaw: 67.42994070659394, HFOV: 100
+          {
+            "pitch": 43.53296070433715,
+            "yaw": 78.61381707843654,
+            "type": "scene",
+            "text": "SPA",
+            "sceneId": "spa"
           },
         ]
       },
@@ -192,7 +199,7 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
             "yaw": -100.26184850620108,
             "type": "scene",
             "text": "SPA",
-            "sceneId": "spa"
+            "sceneId": "spa2"
           },
           {
             "pitch": -2.3342254737705543,
@@ -204,7 +211,15 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
         ]
       },
       bazen:{
-        type: "equirectangular",
+        "type": "cubemap",
+        "cubeMap": [
+            "86/pz.png",
+            "86/px.png",
+            "86/nz.png",
+            "86/nx.png",
+            "86/py.png",
+            "86/ny.png",
+        ],
         "panorama": "out86.png",
         hotSpots:[
           {
@@ -233,7 +248,21 @@ $,!1),g.removeEventListener("mouseleave",ma,!1));s.innerHTML="";s.classList.remo
       spa:{
         type: "equirectangular",
         "panorama": "spa.png",
-        //Pitch: -27.46779863229409, Yaw: 93.1358537385197, Center Pitch: -21.159549800537842, Center Yaw: 91.91861267050233, HFOV: 100
+        //Pitch: -31.81356938946414, Yaw: -166.59170558425186, Center Pitch: -33.943822978118156, Center Yaw: -147.8991094086997, HFOV: 100
+        hotSpots:[
+          {
+            "pitch": -31.81356938946414,
+            "yaw": -166.59170558425186,
+            "type": "scene",
+            "text": "Lobby",
+            "sceneId": "hodnik"
+          }
+        ]
+      },
+      spa2:{
+        type: "equirectangular",
+        "panorama": "spa2.png",
+        //Pitch: -31.81356938946414, Yaw: -166.59170558425186, Center Pitch: -33.943822978118156, Center Yaw: -147.8991094086997, HFOV: 100
         hotSpots:[
           {
             "pitch": -27.46779863229409,
